@@ -197,6 +197,7 @@ public class RPGcharecter {
     }
 
     public void showStats() {
+        System.out.println("-----------------------------");
         System.out.println("Character Stats for " + name + ":");
         System.out.println("Level: " + level);
         System.out.println("HP: " + currentHP + "/" + maxHP);
@@ -205,8 +206,22 @@ public class RPGcharecter {
         System.out.println("Intelligence: " + intelligence);
         System.out.println("Defense: " + defense);
         System.out.println("Run Speed: " + runSpeed);
-        System.out.println("Equipped Sword: " + ((equippedSword != null) ? equippedSword.getName() : "None"));
-        System.out.println("Equipped Shield: " + ((equippedShield != null) ? equippedShield.getName() : "None"));
+        if (equippedSword != null) {
+            System.out.println("Equipped Sword: " + equippedSword.getName() + " (Level " + equippedSword.getLevel() + ")");
+        } else {
+            System.out.println("Equipped Sword: None");
+        }
+        if (equippedShield != null) {
+            System.out.println("Equipped Shield: " + equippedShield.getName() + " (Level " + equippedShield.getLevel() + ")");
+        } else {
+            System.out.println("Equipped Shield: None");
+        }
+        System.out.println("Equipped Ring: " + ((equippedRing != null) ? equippedRing.getName() : "None"));
+        if (equippedNecklace != null) {
+            System.out.println("Equipped Necklace: " + equippedNecklace.getName() + " (Level " + equippedNecklace.getLevel() + ")");
+        } else {
+            System.out.println("Equipped Necklace: None");
+        }
         System.out.println("-----------------------------");
     }
 
